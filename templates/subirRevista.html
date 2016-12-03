@@ -1,0 +1,67 @@
+<div class="row">
+	<div class="large-12 medium-12 small-12 columns">
+		<ul class="progressbar">
+			<li class="active">¿Qué hacer?</li>
+			<li class="active">Cargar revista</li>
+		</ul>
+	</div>
+</div>
+<!-- fieldsets -->
+<!-- multistep form -->
+<form id="msform" class="row" method="post" action="subirRevista.php">
+	<fieldset class="large-12 columns">
+		<h2 class="fs-title">Cargar Revista PassClub</h2>
+		<h3 class="fs-subtitle">archivo pdf</h3>
+
+		<div class="row text-left">
+			<div class="small-8 small-centered columns">
+				<label><h4>Código de revista</h4>
+					<hr/>
+					<div class="row">
+						<div class="large-6 medium-6 small-6 columns">
+							<h4 class="subheader"><small>Titulo</small></h4>
+						</div>
+						<div class="large-6 medium-6 small-6 columns">
+							<input type="text" name="titulo" placeholder="Ej: septiembre 2014" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-6 medium-6 small-6 columns">
+							<h4 class="subheader"><small>Ciudad</small</h4>
+						</div>
+						<div class="large-6 medium-6 small-6 columns">
+							<select name="ciudad">
+								<option value=""></option>
+								<option value="temuco">Temuco</option>
+								<option value="valdivia">Valdivia</option>
+								<option value="osorno">Osorno</option>
+								<option value="puerto%20montt">Puerto Montt</option>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-6 medium-6 small-6 columns">
+							<h4 class="subheader">
+								<small>Al subir la revista en 
+									<a href="http://issuu.com">issu.com</a>, copia y pega el c&oacute;digo ubicado en issuu.com/<kbd>18274938</kbd></small></h4>
+								</div>
+								<div class="large-6 medium-6 small-6 columns">
+									<input type="text" name="revista" placeholder="pega el código acá" />
+								</div>
+							</div>
+						</label>
+					</div>
+				</div>
+				<hr/>		
+
+				<footer class="row">
+					<div class="large-6 medium-6 small-6 columns text-left">
+						<a class="button radius small" href="paso_1.php">Anterior</a>
+					</div>
+					<div class="large-6 medium-6 small-6 columns text-right">
+						<button  name="subirBtn" class="button radius success small">Publicar</button>
+					</div>
+				</footer>
+
+			</fieldset>
+		</form>

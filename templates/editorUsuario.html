@@ -1,0 +1,89 @@
+<div class="row">
+	<div class="large-12 medium-12 small-12 columns">
+		<ul class="progressbar">
+			<li class="active">editar perfil</li>
+		</ul>
+	</div>
+</div>
+<!-- fieldsets -->
+<!-- multistep form -->
+<form id="msform" class="row" method="post" action="editarPerfilDB.php">
+	<fieldset class="large-12 columns">
+		<h2 class="fs-title">Editar perfil</h2>
+		<h3 class="fs-subtitle">cuenta</h3>
+		<h3 style="font-size:1.2rem; color:#D52E2E;"><strong>*</strong>Todos los campos son obligatorios</h3><br/>
+		<div class="row">
+			<div class="small-8 small-centered columns text-left">
+				<label><h5>Nombre<span style="color:#D52E2E;">*</span></h5>
+				<input name='nombre' type='text' value="{nombre}"></input>
+				</label>
+			</div>
+		</div>
+		<br/>
+		<div class="row">
+			<div class="small-8 small-centered columns text-left">
+				<label><h5>Rut<span style="color:#D52E2E;">*</span></h5>
+				<input name='rut' type='text' value="{rut}" readonly>El rut no se puede modificar</input>
+				</label>
+			</div>
+		</div>
+		<br/>
+		<div class="row">
+			<div class="small-8 small-centered columns text-left">
+				<label><h5>Fecha de Nacimiento<span style="color:#D52E2E;">*</span></h5>
+				<input name='fechaNac' type='date' value="{fechaNac}"></input>
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-8 small-centered columns text-left">
+				<label><h5>Dirección<span style="color:#D52E2E;">*</span></h5>
+				<input name='direccion' type="text" value="{direccion}"></input>
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-8 small-centered columns text-left">
+				<label><h5>Correo electrónico<span style="color:#D52E2E;">*</span></h5>
+				<input name='mail' type='text' value="{mail}"></input>
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-8 small-centered columns text-left">
+				<label><h5>Teléfono<span style="color:#D52E2E;">*</span></h5>
+				<input name='fono' type='text' value="{fono}"></input>
+				</label>
+			</div>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="small-8 small-centered columns text-left">
+				<label><h5>Nueva contraseña<span style="color:#D52E2E;">*</span></h5>
+				<input name='passwordNuevo' type='password' value="">Llenar solo si desea cambiar</input>
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-8 small-centered columns text-left">
+				<label><h5>Repetir nueva contraseña<span style="color:#D52E2E;">*</span></h5>
+				<input name='repetePass' type='password' value="">Llenar solo si desea cambiar</input>
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-8 small-centered columns text-left">
+				<label><h5>Contraseña actual<span style="color:#D52E2E;">*</span></h5>
+				<input name='passwordActual' type='password' value=""></input>
+				</label>
+			</div>
+		</div>
+		<br/>
+		<div class="row">
+			<div class="small-8 small-centered columns text-left">
+				<button id="editarPerfilBtn" class="button radius">actualizar datos</button>
+			</div>
+		</div>
+		<br/>
+	</fieldset>
+</form>

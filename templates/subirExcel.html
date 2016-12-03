@@ -1,0 +1,55 @@
+
+<head>
+</head>
+
+<body>
+	<div class="row">
+		<div class="large-12 medium-12 small-12 columns">
+			<ul class="progressbar">
+				<li class="active">¿Qué hacer?</li>
+				<li class="active">Cargar listado</li>
+				<div id="paso3"></div>
+				<!-- <li>Añadir imagen</li> -->
+			</ul>
+		</div>
+	</div>
+	<!-- fieldsets -->
+	<!-- multistep form -->
+	<form id="msform" class="row"  name="importa" method="post" enctype="multipart/form-data" >
+		<fieldset class="large-12 columns">
+			<h2 class="fs-title">Cargar listado de empresas</h2>
+			<h3 class="fs-subtitle">paso 2</h3>
+
+			<div class="row text-left">
+				<div class="small-8 small-centered columns">
+					<div class="row text-center" id="mod-upload-img">
+						<div class="small-10 small-centered columns">
+							<ul class="no-bullet radius">
+								<li><label><h5>Seleccionar acción</h5><select name="accionExcel">
+									<option value="crear">Crear</option>
+									<option value="eliminar">Eliminar</option>
+									</select></label>
+								</li>
+								<li><input type="file" id="file_upload" class="button" name="excel"></li>
+								<input type="hidden" value="upload" name="action" />
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>	
+
+			<footer class="row">
+				<div class="large-6 medium-6 small-6 columns text-left">
+					<a class="button radius small" href="gestorCupones.php">Anterior</a>
+				</div>
+				<div class="large-6 medium-6 small-6 columns text-right">
+					<button type="submit" name="enviar"  value="Importar" class="button radius success small">Actualizar</button>
+				</div>
+			</footer>
+
+		</fieldset>
+	</form>
+
+</body>
+<script id='alertaSuave'></script>
+</html>

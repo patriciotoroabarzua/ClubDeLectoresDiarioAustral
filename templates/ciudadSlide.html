@@ -1,0 +1,46 @@
+
+<div class="row">
+	<div class="large-12 medium-12 small-12 columns">
+		<ul class="progressbar">
+			<li class="active">¿Qué hacer?</li>
+			<li class="active">Definir ubicación</li>
+			<li>Editar Slideshow</li>
+		</ul>
+	</div>
+</div>
+<!-- fieldsets -->
+<!-- multistep form -->
+<form id="msform" class="row" method="get" action="ordenarSlide.php">
+	<fieldset class="large-12 columns">
+		<h2 class="fs-title">Editar Slideshow</h2>
+		<h3 class="fs-subtitle">paso 2</h3>
+		
+		<div class="row text-left">
+			<div class="small-8 small-centered columns">
+				<div class="row">
+					<div class="small-12 columns">
+						<label><h5>Selecciona la ubicación del Slider a editar</h5>
+							<select name="slide_ciudad">
+								<option value="todas">Portada</option>
+								<option value="temuco">Slider Temuco</option>
+								<option value="valdivia">Slider Valdivia</option>
+								<option value="osorno">Slider Osorno</option>
+								<option value="puerto%20montt">Slider Puerto Montt</option>
+							</select>
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+				
+		<footer class="row">
+			<div class="large-6 medium-6 small-12 columns large-text-left small-text-center">
+				<a class="button radius small" href="gestorCupones.php">Anterior</a>
+			</div>
+			<div class="large-6 medium-6 small-12 columns large-text-right small-text-center">
+				<button type="submit" class="button small radius success">Editar Slideshow</a>
+			</div>
+		</footer>
+		
+	</fieldset>
+</form>

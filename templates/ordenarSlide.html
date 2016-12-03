@@ -1,0 +1,204 @@
+
+	<div class="row">
+	<div class="large-12 medium-12 small-12 columns">
+		<ul class="progressbar">
+			<li class="active">¿Qué hacer?</li>
+			<li class="active">Definir ubicación</li>
+			<li class="active">Editar Slideshow</li>
+		</ul>
+	</div>
+</div>
+<!-- fieldsets -->
+<!-- multistep form -->
+<div id="msform" class="row">
+	<fieldset class="large-12 columns">
+		<h2 class="fs-title">Editar Slideshow</h2>
+		<h3 class="fs-subtitle">paso 2</h3>
+		
+		<div class="row text-left">
+			<div class="small-8 small-centered columns">
+				<div class="row">
+					<div class="large-6 medium-6 small-12 columns">
+						<div class="exclude-title">
+							<h4>Elegir Imagen</h4>
+							<select id="textAgregarSlide">
+								{ordenarSlidePosibles}
+							</select>
+							<br/>
+							<button class="button success radius tiny" onclick="agregarList()">Agregar</button>
+						</div>
+					</div>
+					<div class="large-6 medium-6 small-12 columns">
+						<div class="exclude-title large-text-right medium-text-right">
+							<h4 class="subheader">Slideshow</h4>
+						</div>
+						<ul class="exclude-list no-bullet exclude list">
+							{slide}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>	
+		
+		<footer class="row">
+			<div class="large-6 medium-6 small-12 columns large-text-left small-text-center">
+				<a class="button radius small" href="ciudadSlide.php">Anterior</a>
+			</div>
+			<div class="large-6 medium-6 small-12 columns large-text-right small-text-center">
+				<button class="button radius success" onclick="terminarList()">Terminar</button>
+			</div>
+		</footer>
+		
+	</fieldset>
+</div>
+
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="js/jquery.sortable.js"></script>
+<script>
+function agregarList(){
+	var largo=$(".exclude").find("li.habilitado").length;
+	if(largo<7){
+		
+		var elementSelect = $("#textAgregarSlide option:selected");
+		var elementNew=$("#Item"+(largo+1));
+
+		elementNew.attr("data-value",elementSelect.val());
+		console.log(elementSelect.val());
+		console.log(elementNew.attr("data-value"));
+		elementNew.text("");
+
+		var input = $('<input/>', {
+    		'class': 'dd-option-value',
+    		'type': 'hidden',
+    		'value': '0'
+		});
+
+		var img = $('<img/>', {
+    		'class': 'dd-option-image',
+    		'src': elementSelect.attr("data-imagesrc")
+		});
+		var label = $('<label/>', {
+    		'class': 'dd-option-text',
+    		'text': elementSelect.text()
+		});
+
+		var small = $('<small/>', {
+    		'class': 'dd-option-description dd-desc',
+    		'text': elementSelect.attr("data-aux")
+		});
+
+		var button = $('<button/>', {
+    		'class': 'exclude-btn',
+    		'text': "X"
+		});
+		button.click(function(){
+			eliminarList(largo+1)
+		});
+		console.log(elementNew);
+ 		elementNew.append(input);
+ 		elementNew.append(img);
+ 		elementNew.append(label);
+ 		elementNew.append(small);
+ 		elementNew.append(button);
+						/*		<small class='dd-option-description dd-desc'>".$arrayCup[$i]["auxiliar"]."</small>
+								<button onclick='eliminarList(".($i+1).")' class='exclude-btn'>X</button>*/
+
+		elementNew.removeClass("disabled");
+		elementNew.addClass("habilitado");
+		elementNew.sortable("enable");
+		$('.sortable').sortable();
+		$('.handles').sortable({
+			handle: 'span'
+		});
+		$('.connected').sortable({
+			connectWith: '.connected'
+		});
+		$('.exclude').sortable({
+			items: ':not(.disabled)'
+		});
+	}
+}
+function eliminarList(numId){
+		var elementNew=$("#Item"+numId);
+		elementNew.val("");
+		elementNew.text("vacio");
+		elementNew.removeClass("habilitado");
+		elementNew.addClass("disabled");
+		elementNew.attr("draggable","false");
+		elementNew.sortable("disabled");
+		$('.sortable').sortable();
+		$('.handles').sortable({
+			handle: 'span'
+		});
+		$('.connected').sortable({
+			connectWith: '.connected'
+		});
+		$('.exclude').sortable({
+			items: ':not(.disabled)'
+		});
+}
+function terminarList(){
+	
+	var largo=$(".exclude").find("li.habilitado").length;
+	var li;
+	var arregloAux=new Array();
+
+	for(var i=1;i<7;i++){
+		if(i<largo+1){
+			li=$("#Item"+(i));;
+			//console.log(li.attr("data-value"));
+			arregloAux[i]=li.attr("data-value");
+		}else{
+			arregloAux[i]="no";
+		}
+	}
+	var GET = {};
+
+	document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+    	function decode(s) {
+        	return decodeURIComponent(s.split("+").join(" "));
+    	}
+
+    	GET[decode(arguments[1])] = decode(arguments[2]);
+	});
+	var ciudadX=GET["slide_ciudad"];
+	var arreglo={
+		ciudad:ciudadX,
+		slide1:arregloAux[1],
+		slide2:arregloAux[2],
+		slide3:arregloAux[3],
+		slide4:arregloAux[4],
+		slide5:arregloAux[5],
+		slide6:arregloAux[6],
+		arregloInc:"si"
+	};
+	//arreglo["arregloInc"]="SI";*/
+	//$.post( "test.php", { 'choices[]': [ "Jon", "Susan" ] } );
+	//$.post("ordenarSlide.php", {'slides[]':["3","8","7"]});
+	$.ajax({
+		url:"ordenarSlide.php",
+		data: arreglo,
+		type:"POST",
+		success:function(data){
+			//console.log(data);
+			location.reload();
+		}
+
+	});
+}
+</script>
+<script>
+$(function () {
+	$('.sortable').sortable();
+	$('.handles').sortable({
+		handle: 'span'
+	});
+	$('.connected').sortable({
+		connectWith: '.connected'
+	});
+	$('.exclude').sortable({
+		items: ':not(.disabled)'
+	});
+});
+</script>

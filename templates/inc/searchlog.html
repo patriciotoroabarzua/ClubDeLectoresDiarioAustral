@@ -1,0 +1,45 @@
+	<!-- Inicio Barra Búsqueda & Logueo -->
+	<div id="searchlog-bar">
+		<div class="row">
+			<div class="large-8 medium-8 small-12 columns" id="search-bar">
+				<div class="row">
+					<div class="small-4 columns hide-for-small-only" id="search-bar-title">
+						Buscador de Beneficios
+					</div>
+					<div class="large-8 medium-8 small-12 columns">
+						<div class="row collapse">
+							<div class="small-6 columns">
+								<input type="text" placeholder="Busca un beneficio" id="search-bar-input">
+							</div>
+							<div class="small-4 columns">
+								<select id="search-bar-dropdown">
+									<option value="">Todas</option>
+									<option value="temuco">Temuco</option>
+									<option value="valdivia">Valdivia</option>
+									<option value="osorno">Osorno</option>
+									<option value="puerto%20montt">Puerto Montt</option>
+								</select>
+							</div>
+							<div class="small-2 columns">
+								<button class="button secondary postfix" id="search-bar-button" onclick="buscarBeneficios()">Ir</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="large-4 medium-4 small-12 columns text-right" id="log-bar">
+			{login}
+			</div>
+		</div>
+	</div>
+	<script>
+	$("search-bar-input").keypress(function(event) {
+		console.log("hola");
+    if (event.which == 13) {
+        event.preventDefault();
+        buscarBeneficios();
+    }
+});
+
+	</script>
+	<!-- Fin Barra Búsqueda & Logueo -->

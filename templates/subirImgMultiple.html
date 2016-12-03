@@ -1,0 +1,58 @@
+
+    {mensaje}
+
+<div class="row">
+    <div class="large-12 medium-12 small-12 columns">
+        <ul class="progressbar">
+            <li class="active">¿Qué hacer?</li>
+            <li class="active">Cargar listado</li>
+            <li class="active">Subir Logos</li>
+        </ul>
+    </div>
+</div>
+<!-- fieldsets -->
+<!-- multistep form -->
+<form id="msform" class="row" id="subirImg" name="subirImg" enctype="multipart/form-data" method="post" action="subirImgMultiple.php">
+    <fieldset class="large-12 columns"> 
+        <h2 class="fs-title">Añadir imagen</h2>
+        <h3 class="fs-subtitle">paso 4</h3>
+        <div class="row text-left">
+            <div class="small-8 small-centered columns">
+                <div class="row text-center" id="mod-upload-img">
+                    <div class="small-12 columns">
+                        <ul class="button-group radius" id="contenedorImg">
+                            <li>
+                                <input type="file" class="button secondary" name="imagen[]"/>
+                            </li>
+                            <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="row">
+            <div class="row">
+                <div class="large-6 medium-6 small-6 columns text-left">
+                    <input type="button" name="nuevaImg" id="nuevaImg" value="Agregar imagen" onclick="agregarImg()" class="button radius small"/>
+                </div>
+                <div class="large-6 medium-6 small-6 columns text-right showcase sweet">
+                    <input type="submit" name="subirBtn" id="subirBtn" value="Subir imagenes" class="button radius success publish"/>
+                </div>
+            </div>
+        </footer>
+    </fieldset>
+</form>
+</body>
+<script type="text/javascript">
+function agregarImg(){
+    var contenedorImg=document.getElementById('contenedorImg');
+    var nuevaImg= document.createElement("input");
+    nuevaImg.type="file";
+    nuevaImg.name="imagen[]";
+    nuevaImg.className="button secondary";
+    var li= document.createElement("li");
+    li.appendChild(nuevaImg);
+    contenedorImg.appendChild(li);
+
+}
+</script>

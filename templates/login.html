@@ -1,0 +1,65 @@
+
+<div class="row">
+  <div class="large-12 medium-12 small-12 columns">
+    <ul class="progressbar">
+      <li class="active">Bienvenido</li>
+    </ul>
+  </div>
+</div>
+<!-- fieldsets -->
+<!-- multistep form -->
+<form id="msform" class="row" action="validar_usuario.php" method="post">
+  <fieldset class="large-12 columns">
+    <h2 class="fs-title">Iniciar sesión</h2>
+    <h3 class="fs-subtitle">admin passclub</h3>
+    <div class="lead-login">
+      <div class="row">
+          <div class="large-4 large-offset-2 medium-4 medium-offset-2 small-12 column">
+            <img src="css/img/tarjeta.jpg">
+          </div>
+        <div class="large-4 medium-4 small-12 columns text-left end">
+          <p style="margin:0;font-size:.8rem;"><strong>Paso 1</strong></p>
+            <p style="font-size:.7rem;"><strong>¡Regístrate!</strong> Y obtén todos los beneficios del Club de Lectores, descarga tus cupones con increíbles promociones.</p>
+            <p style="margin:0;font-size:.8rem;"><strong>Paso 2</strong></p>
+            <p style="font-size:.7rem;">Completa tus datos y ya estás registrado para disfrutar de todos los beneficios y promociones del Club de Lectores.</p>
+      </div>
+    </div>
+        <hr/>
+        <div class="row">
+            <div class="small-8 small-centered columns text-center">
+                 <p style="font-size:.8rem;margin-top:.5rem;">Ingresa tu RUT y como contrase&ntilde;a tu <strong>n&uacute;mero de orden de suscripci&oacute;n</strong> que aparece en tu tarjeta Club. Si ya te registraste y no recuerdas tu contraseña, por favor haz clic en la opción olvido de contraseña y sigue los pasos.</p>
+        </div>
+            </div>
+        </div>
+    <div class="row">
+      <div class="small-8 small-centered columns text-left">
+        <label><h5>N&uacute;mero de Rut</h5>
+        <input name="admin" required="required" type="text"  placeholder="ej: 15646756-0" />
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-8 small-centered columns text-left">
+        <label><h5>Contraseña</h5>
+        <input name="password_usuario" required="required" type="password" placeholder="ingresa tu clave" />
+        </label>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="small-8 small-centered columns text-left">
+        <button name="iniciar" type="submit" class="button radius">iniciar sesión</button>
+        <a href="recuperarContrasena.php"><small>Olvide mi contrase&ntilde;a</small></a>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="large-12 medium-12 small-12 columns">
+        <div class="panel lead-login">
+          <h4><strong>¿Problemas para ingresar?</strong></h4>
+          <p>Ll&aacute;manos al Centro de Atenci&oacute;n al Suscriptor  al <a href="tel:600 4000 100">600 4000 100</a> o escr&iacute;benos a <a href="mailto:clubdelectores@australtemuco.cl">clubdelectores@australtemuco.cl</a></p>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</form>

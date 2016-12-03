@@ -1,0 +1,51 @@
+
+	<div class="{colorTitulo}-bg">
+	<div class="row">
+		<div class="large-12 medium-12 small-12 columns">
+			<h2>{tipoOpcionTitulo} {ciudadTitulo}</h2>
+		</div>
+	</div>
+</div>
+{textoPromoClub}
+<div class="row collapse">
+	<div class="large-12 medium-12 small-12 columns mod-cupones" id="mod-cupones-beneficios">
+		<ul class="small-block-grid-1 medium-block-grid-4 large-block-grid-4 mod-cupones-block mod-cupones-block-category">
+			{cupones}
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+	function loadX(){
+		{empresas}
+		load(empresas, zoomMap);
+	}
+	function actualizarMapa(){
+		{empresas}
+		var j=0;
+		var arrayFiltro = new Array();
+		var arrayFiltroName =["restaurant","pub","cafeteria","discoteque","comida rapida","cine","turismo","infantil","belleza","deporte","salud","veterinarias","automotriz","comercio"];
+		for(var i=1;i<15;i++){
+			if(document.getElementById("checkbox"+i).checked==true){
+
+				arrayFiltro[j]=arrayFiltroName[i-1];
+				j++;
+			}
+		} 
+		loadFiltro(empresas,zoomMap,arrayFiltro);
+	}
+	function buscarBeneficios(){
+		var text= document.getElementById("search-bar-input").value;
+		var ciudad= document.getElementById("search-bar-dropdown").value;
+		var ampersand="";
+		if(ciudad!=""){
+			ciudad="ciudad="+ciudad;
+		}
+		if(text!=""){
+			text="tituloBuscado="+text;
+		}
+		if(text!="" && ciudad!=""){
+			ampersand="&";
+		}
+		location.href="buscarCupon.php?"+ciudad+ampersand+text;
+	}
+	</script>

@@ -1,0 +1,136 @@
+<body onload="cargarSelect()">
+<div class="row">
+	<div class="large-12 medium-12 small-12 columns">
+		<ul class="progressbar">
+			<li class="active">¿Qué hacer?</li>
+			<li class="active">Editar Cupón</li>
+		</ul>
+	</div>
+</div>
+<!-- fieldsets -->
+<!-- multistep form -->
+<form id="msform" class="row" method="post">
+	<fieldset class="large-12 columns">
+		<h2 class="fs-title">Diseñar Cupón</h2>
+		<h3 class="fs-subtitle">paso 3</h3>
+
+		<div class="row text-left">
+			<div class="small-8 small-centered columns">
+				<div class="row">
+					<div class="small-12 columns">
+						<label><h5>Tipo</h5>
+							<input name="opcion" type="text" ReadOnly value="{tipoOpcion}"/>
+						</label>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+		<div class="row text-left">
+			<div class="small-8 small-centered columns">
+				<label><h4>Titulo</h4>
+					<input name="titulo" type="text" value="{titulo}" />
+				</label>
+			</div>
+		</div>
+		<hr/>
+		
+		
+		<div class="row text-left">
+			<div class="small-8 small-centered columns">
+				<div class="row">
+					<div class="small-6 columns">
+						<label><h5>Empresa</h5>
+							<select id="empresaSelect" name="empresa">
+							</select>
+						</label>
+					</div>
+					<div class="small-6 columns">
+						<label><h5>Lugar</h5>
+							<input name="lugar" type="text" value="{lugar}" />
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row text-left">
+			<div class="small-8 small-centered columns">
+				<div class="row">
+					<div class="small-6 columns">
+						<label><h5>Telefono</h5>
+							<input name="telefono" type="text" value="{telefono}"/>
+						</label>
+					</div>
+					<div class="small-6 columns">
+						<label><h5>Slider</h5>
+							<ul class="inline-list">
+								<li><label>Si
+								<input name="slide" type="radio" value="si" {checkedSi}/>
+							</label>
+							</li>
+							<li><label>No
+								<input name="slide" type="radio" value="no" {checkedNo}/>
+							</label></li>
+							</ul>
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row text-left">
+			<div class="small-8 small-centered columns">
+				<div class="row">
+					<div class="small-12 columns">
+						<label><h5>Auxiliar</h5>
+							<input name="auxiliar" type="text" value="{auxiliar}"/>
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='row text-left'>
+			<div class='small-8 small-centered columns'>
+				<div class='row'>
+					<div id="camposPropios"></div>
+				</div>
+			</div>
+		</div>
+		<div id="camposPropios2"></div>
+		<div class="row text-left">
+			<div class="small-8 small-centered columns">
+				<label>
+					<textarea name="descripcion" rows="8" alt="Descripcion">{descripcion}</textarea>
+				</label>
+			</div>
+		</div>
+		
+		
+		<footer class="row">
+			<div class="large-6 medium-6 small-6 columns text-left">
+				<a class="button radius small" href="visor.php?cuponid={id}">Anterior</a>
+			</div>
+			<div class="large-6 medium-6 small-6 columns text-right">
+				<button class="button radius success small" id="crearCuponBtn" name="subirCuponBtn">Editar</button>
+			</div>
+		</footer>
+		
+	</fieldset>
+</form>
+</body>
+<script type="text/javascript">
+function cargarSelect(){
+	{empresas}
+	var empresIdSeleccionado={Empresaid};
+	var select=document.getElementById("empresaSelect");
+	for(var i=0;i<empresas.length;i++){
+		var element=document.createElement("Option");
+		element.value=empresas[i]["id"];
+		element.text=empresas[i]["nombre"];
+		if(empresIdSeleccionado==empresas[i]["id"]){
+			element.selected=true;
+		}
+		select.appendChild(element);
+	}
+}
+</script>

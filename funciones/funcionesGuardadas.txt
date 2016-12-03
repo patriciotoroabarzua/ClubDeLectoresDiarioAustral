@@ -1,0 +1,59 @@
+if($array[$i]["tipoOpcion"]=="beneficio"){
+				$cupones = mysqli_query($con,"SELECT * FROM beneficio WHERE Cuponid=".$array[$i]["id"]);
+				$arrayCupones[$i] = mysqli_fetch_array($cupones);
+				$arraySalida[$i]["categoria"]=$arrayCupones[$i]["categoria"];
+				$arraySalida[$i]["descuento"]=$arrayCupones[$i]["descuento"];
+
+			}else if($array[$i]["tipoOpcion"]=="curso"){
+				$cupones = mysqli_query($con,"SELECT * FROM curso WHERE Cuponid=".$array[$i]["id"]);
+				$arrayCupones[$i] = mysqli_fetch_array($cupones);
+				$arraySalida[$i]["fecha"]=$arrayCupones[$i]["fecha"];
+				$arraySalida[$i]["tipo"]=$arrayCupones[$i]["tipo"];
+
+			}else if($array[$i]["tipoOpcion"]=="promocion"){
+				$cupones = mysqli_query($con,"SELECT * FROM promocion WHERE Cuponid=".$array[$i]["id"]);
+				$arrayCupones[$i] = mysqli_fetch_array($cupones);
+				$arraySalida[$i]["rango"]=$arrayCupones[$i]["rango"];
+				$arraySalida[$i]["tipo"]=$arrayCupones[$i]["tipo"];
+
+			}else if($array[$i]["tipoOpcion"]=="social"){
+				$cupones = mysqli_query($con,"SELECT * FROM social WHERE Cuponid=".$array[$i]["id"]);
+				$arrayCupones[$i] = mysqli_fetch_array($cupones);
+				$arraySalida[$i]["fecha"]=$arrayCupones[$i]["fecha"];
+
+			}else if($array[$i]["tipoOpcion"]=="panorama"){
+				$cupones = mysqli_query($con,"SELECT * FROM panorama WHERE Cuponid=".$array[$i]["id"]);
+				$arrayCupones[$i] = mysqli_fetch_array($cupones);
+				$arraySalida[$i]["fecha"]=$arrayCupones[$i]["fecha"];
+				$arraySalida[$i]["accesibilidad"]=$arrayCupones[$i]["accesibilidad"];
+
+			}else if($array[$i]["tipoOpcion"]=="concurso"){
+				$cupones = mysqli_query($con,"SELECT * FROM concurso WHERE Cuponid=".$array[$i]["id"]);
+				$arrayCupones[$i] = mysqli_fetch_array($cupones);
+				$arraySalida[$i]["fecha"]=$arrayCupones[$i]["fecha"];
+				$arraySalida[$i]["contacto"]=$arrayCupones[$i]["contacto"];
+			}
+
+if($array[$i]["tipoOpcion"]=="beneficio"){
+				$arraySalida[$j]["categoria"]=$array[$i]["categoria"];
+				$arraySalida[$j]["descuento"]=$array[$i]["descuento"];
+
+			}else if($array[$i]["tipoOpcion"]=="curso"){
+				$arraySalida[$j]["fecha"]=$array[$i]["fecha"];
+				$arraySalida[$j]["tipo"]=$array[$i]["tipo"];
+
+			}else if($array[$i]["tipoOpcion"]=="promocion"){
+				$arraySalida[$j]["rango"]=$array[$i]["rango"];
+				$arraySalida[$j]["tipo"]=$array[$i]["tipo"];
+
+			}else if($array[$i]["tipoOpcion"]=="social"){
+				$arraySalida[$j]["fecha"]=$array[$i]["fecha"];
+
+			}else if($array[$i]["tipoOpcion"]=="panorama"){
+				$arraySalida[$j]["fecha"]=$array[$i]["fecha"];
+				$arraySalida[$j]["accesibilidad"]=$array[$i]["accesibilidad"];
+
+			}else if($array[$i]["tipoOpcion"]=="concurso"){
+				$arraySalida[$j]["fecha"]=$array[$i]["fecha"];
+				$arraySalida[$j]["contacto"]=$array[$i]["contacto"];
+			}

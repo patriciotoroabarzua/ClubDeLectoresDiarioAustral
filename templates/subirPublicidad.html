@@ -1,0 +1,82 @@
+<div class="row">
+	<div class="large-12 medium-12 small-12 columns">
+		<ul class="progressbar">
+			<li class="active">¿Qué hacer?</li>
+			<li class="active">Subir Publicidad</li>
+		</ul>
+	</div>
+</div>
+<!-- fieldsets -->
+<!-- multistep form -->
+<form id="msform" class="row" id="subirImg" name="subirImg" enctype="multipart/form-data" method="post" action="subir_publicidad.php">
+	<input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
+	<fieldset class="large-12 columns">
+		<h2 class="fs-title">Subir Publicidad</h2>
+		<h3 class="fs-subtitle">paso 2</h3>
+
+		<div class="row text-left">
+			<div class="small-8 small-centered columns">
+				<label><h4>Seleccionar la Zona</h4>
+					<select name="zona">
+						<option value="todas">todas</option>
+						<option value="temuco">Temuco</option>
+						<option value="valdivia">Valdivia</option>
+						<option value="osorno">Osorno</option>
+						<option value="puerto montt">Puerto Montt</option>
+					</select>
+				</label>
+			</div>
+		</div>
+		<div class="row text-left">
+			<div class="small-8 small-centered columns">
+				<label><h4>Seleccionar la Ubicaci&oacute;n <a href="#" data-reveal-id="modal-publicidad"><span class="label radius">info</span></a></h4>
+					<select name="espacio">
+						<option value="1">Espacio 1</option>
+						<option value="2">Espacio 2</option>
+						<option value="3">Espacio 3</option>
+						<option value="4">Espacio 4</option>
+						<option value="5">Espacio 5</option>
+					</select>
+				</label>
+			</div>
+		</div>
+		<div class="row text-left">
+			<div class="small-8 small-centered columns">
+				<label><h4>URL</h4>
+					<input type="text" name="url"/>
+				</label>
+			</div>
+		</div>
+		<hr/>
+		<div class="row text-left">
+			<div class="small-8 small-centered columns">
+				<div class="row text-center" id="mod-upload-img">
+					<div class="small-12 columns">
+						<ul class="button-group radius">
+							<li><input type="file" class="button" name="imagen" id="imagen" ></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>			
+		
+		<footer class="row">
+			<div class="large-6 medium-6 small-6 columns text-left">
+				<a class="button radius small" href="gestorCupones">Anterior</a>
+			</div>
+			<div class="large-6 medium-6 small-6 columns text-right">
+				<button class="button radius success small" type="submit" name="subirBtn" id="subirBtn" value="Subir imagen" >Publicar</button>
+			</div>
+		</footer>
+		
+	</fieldset>
+</form>
+
+<div id="modal-publicidad" class="reveal-modal small" data-reveal>
+	<header>
+		<h3>Espacios de Publicidad</h3>
+		<p>Los espacios de publicidad se encuentran en el Index, página principal del sitio web PassClub. A continuación encontrarás un esquema con las posiciones, para poder tomar la decisión de qué posición elegir para la Publicidad que estas cargando. </p>
+	</header>
+	<img src="img/info-1.jpg">
+	<a class="close-reveal-modal">&#215;</a>
+</div>

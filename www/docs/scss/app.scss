@@ -1,0 +1,460 @@
+@import "settings";
+@import "foundation";
+
+// Or selectively include components
+// @import
+//   "foundation/components/accordion",
+//   "foundation/components/alert-boxes",
+//   "foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+//   "foundation/components/button-groups",
+//   "foundation/components/buttons",
+//   "foundation/components/clearing",
+//   "foundation/components/dropdown",
+//   "foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+//   "foundation/components/forms",
+//   "foundation/components/grid",
+//   "foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+//   "foundation/components/labels",
+//   "foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+//   "foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+//   "foundation/components/side-nav",
+//   "foundation/components/split-buttons",
+//   "foundation/components/sub-nav",
+//   "foundation/components/switches",
+//   "foundation/components/tables",
+//   "foundation/components/tabs",
+//   "foundation/components/thumbs",
+//   "foundation/components/tooltips",
+//   "foundation/components/top-bar",
+//   "foundation/components/type",
+//   "foundation/components/offcanvas",
+//   "foundation/components/visibility";
+
+
+/*basic reset*/
+* {margin: 0; padding: 0;}
+
+html {
+	height: 100%;
+}
+body{
+	background: $primary-color;
+}
+@font-face {
+    font-family: 'entypo';
+    src: url('../typo/entypo.eot');
+    src: url('../typo/entypo.eot?#iefix') format('embedded-opentype'),
+         url('../typo/entypo.woff') format('woff'),
+         url('../typo/entypo.ttf') format('truetype'),
+         url('../typo/entypo.svg#entypo') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+h1{
+	position: absolute;
+	margin: 0;
+	right:100px;
+	top:0;
+}
+.outline { 
+	@include button;
+	background: none;
+	border:1px solid #aaa;
+	color: #aaa;
+	
+}
+.outline:hover{
+	border:1px solid #333;
+	color: #333;
+	background: none;
+}
+/*form styles*/
+#msform {
+	text-align: center;
+	position: relative;
+}
+#msform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 1rem 0;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10% 3rem;
+	position: absolute;
+}
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+/*inputs*/
+#msform input, #msform textarea {
+	padding: 15px;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+	font-size: 13px;
+}
+/*buttons*/
+#msform .action-button {
+	width: 100px;
+	background: #27AE60;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+}
+
+/*headings*/
+h2.fs-title {
+	font-size: 2rem;
+	text-transform: capitalize;
+	color: #0073E5;
+	margin: 1.5rem 0 0;
+	font-weight: 600;
+}
+.fs-subtitle {
+	font-size: 13px;
+	color: #6CBD00;
+	margin-bottom: 1.5rem;
+	border: 1px solid #6CBD00;
+	display: inline-block;
+	border-radius: 3px;
+	padding: .3rem .5rem;
+	text-transform: uppercase;
+	margin-top: .5rem;
+	font-weight: 600;
+}
+/*progressbar*/
+.progressbar {
+	margin: 3rem 0;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+	text-align: center;
+}
+.progressbar li {
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+	font-size: .6rem;
+	font-weight: 600;
+	/* width: 25%; */
+	width: 22%;
+	/* float: left; */
+	display: inline-block;
+	position: relative;
+	text-align: center;
+}
+.progressbar li.active{
+	color: #6CBD00;
+	text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: $primary-color;
+	background: $primary-color-shadow;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+	text-align: center;
+}
+/*progressbar connectors*/
+.progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: $primary-color-shadow;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+.progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+.progressbar li.active:before,  .progressbar li.active:after{
+	background: #6CBD00;
+	color: white;
+}
+.actions-grid{
+	margin: 1rem 0;
+}
+.actions-grid li a{
+	display: block;
+	border-radius: 3px;
+	border: 2px dashed #ddd;
+	padding: 1.5rem 0;
+}
+.actions-grid li a img{
+	max-height: 50px;
+	opacity:.3;
+	margin-top: .3rem;
+}
+.actions-grid li a div{
+	position: relative;
+	margin-top: 1.4rem;
+	text-transform: uppercase;
+	font-weight: 800;
+	color: #AAA;
+	font-size: .9rem;
+}
+.actions-grid li a:hover *{
+	opacity: 1;
+}
+.actions-grid li a:hover{
+	border: 2px dashed #aaa;
+}
+.actions-grid li a:hover div{
+	color: #0073E5;
+}
+label{
+	color: $charcoal;
+}
+.labelfocus{
+	color: $charcoal !important;
+}
+footer{
+	margin: 2rem 8rem 0 !important;
+}
+#mod-upload-img{
+	border: 2px dashed #DDD;
+	border-radius: 3px;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	background: #F5F5F5;
+}
+#mod-upload-img .button-group li a.button{
+	margin: 0;
+}
+.img-upload-list{
+	margin: 0;
+}
+.img-upload-list li{
+	border-bottom: 1px dashed #DDD;
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
+}
+.img-upload-list li h4{
+	font-size: .9rem;
+	line-height: 73px;
+	margin: 0;
+}
+.img-upload-list li h4.subheader{
+	font-size: .8rem;
+}
+.img-upload-list li .button{
+	margin: 20px 0;
+}
+#cupon-search{
+	margin: 1.5rem 0;
+}
+#cupon-search input{
+	border-radius: 3px 0 0 3px;
+}
+#search-cupon-list > li{
+	margin-bottom: 1.5rem;
+	padding-bottom: 1.5rem;
+	border-bottom: 1px dashed #ddd;
+}
+#search-cupon-list > li:last-child{
+	border-bottom: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+#search-cupon-list li h4{
+	font-size: .9rem;
+	text-align: left;
+	font-weight: 600;
+	margin: .3rem 0;
+}
+#search-cupon-list li h4.subheader{
+	font-weight: 400;
+	color: #999;
+}
+#search-cupon-list li p{
+	font-size: .7rem;
+	text-align: left;
+}
+#search-cupon-list li .inline-list li{
+	line-height: 73px;
+	font-size: .8rem;
+}
+#progressbar-step1 li{
+	width: 100%;
+	text-align: center;
+}
+#msform table{
+	height:200px; overflow-y: scroll;
+	border: 0;
+}
+#msform table th{
+	font-size: .8rem;
+}
+#msform table td{
+	font-size: .7rem;
+}
+.nav-admin{
+	-webkit-box-shadow: 0 1px 0 rgba(255,255,255,.2);
+	-moz-box-shadow: 0 1px 0 rgba(255,255,255,.2);
+	box-shadow: 0 1px 0 rgba(255,255,255,.2);
+	border-bottom: 1px solid $primary-color-shadow;
+}
+.nav-admin ul.inline-list{
+	margin: 0;
+	padding: 0;
+}
+.nav-admin ul.inline-list li{
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+.nav-admin ul.inline-list li a{
+	color: #fff;
+	font-size: .8rem;
+	text-transform: capitalize;
+	padding: .7rem;
+	border-radius: 3px;
+}
+.nav-admin ul.inline-list li a:hover{
+	background: rgba(0,0,0,.1);
+}
+.exclude-title h4{
+	margin-bottom: .5rem;
+	padding-bottom: .5rem;
+	border-bottom: 1px solid #ddd;
+}
+.exclude-list .exclude-item{
+	border-radius: 2px;
+	border: solid 1px #CCC;
+	position: relative;
+	cursor: pointer;
+	background: #EEE;
+	overflow: hidden;
+	display: block;
+	padding: 10px;
+	font-weight: normal;
+	font-size: .9rem;
+	margin-bottom: .5rem;
+}
+.exclude-list .exclude-item *{
+	display: inline-block;
+}
+.exclude-title h4{
+	margin-bottom: 1.5rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px dashed #ddd;
+}
+.exclude-list .exclude-item h5{
+	font-size: 0.875rem;
+	color: #4D4D4D;
+	cursor: pointer;
+	font-weight: normal;
+	line-height: 1.5;
+}
+.exclude-list .exclude-item button{
+	margin: 0;
+	padding: 0;
+	background: none;
+	color: #777;
+	position: absolute;
+	top: 0;
+	right: 1rem;
+	line-height: 72px;
+	font-weight: 300;
+	font-size: .8rem;
+}
+h4 small{
+	line-height: 1rem;
+	font-size: .8rem;
+	display: block;
+	text-transform: none;
+	text-align: right;
+}
+#modal-publicidad header{
+	margin-bottom: 1rem;
+	padding-bottom: 1rem;
+}
+#modal-publicidad header p{
+	font-size: .8rem;
+}
+.lead-login{
+	margin-bottom: 1rem;
+}
+.lead-login p{
+	font-size: .8rem;
+	margin: 0;
+}
+.lead-login h4{
+	text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+.error{
+	padding: 0.5625rem;
+	text-align: center;
+	color: #FFF;
+	background: #FF3939;
+	font-size: .9rem;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.no-error{
+	padding: 0.5625rem;
+	text-align: center;
+	color: #FFF;
+	background: #67b918;
+	font-size: .9rem;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.admin-button{
+	height: 45px;
+	padding: 1rem 1.5rem 1rem 2.3rem !important;
+	text-shadow: 0 0 7px rgba(0, 0, 0, 0.7);
+}
+span.entypoicon{
+	font-family: 'entypo';
+	display: inline-block;
+	position: absolute;
+	font-size: 2rem;
+	left: 13px;
+	top: 8px;
+	text-shadow: none;
+	color: rgba(0, 0, 0, 0.3);
+}
+#help-row{
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+#help-row #help-login{
+	border-top: 1px solid $gainsboro;
+	border-bottom: 1px solid $gainsboro;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+#help-row #help-login p{
+	margin-bottom: .5rem;
+}
+#recuperar-pass{
+	color: #777;
+	text-decoration: underline;
+}

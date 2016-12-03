@@ -1,0 +1,166 @@
+<div class="row">
+	<div class="large-12 medium-12 small-12 columns">
+		<ul class="progressbar">
+			<li class="active">¿Qué hacer?</li>
+			<li class="active">Visualizar estadisticas</li>
+		</ul>
+	</div>
+</div>
+<!-- fieldsets -->
+<!-- multistep form -->
+<form id="msform" class="row">
+	<fieldset class="large-12 columns">
+		<h2 class="fs-title">Estadisticas<br><small>{tituloMes}</small></h2>
+		<h3 class="fs-subtitle">paso 2</h3>
+		
+		<div class="row text-left">
+			<div class="small-8 small-centered columns">
+				<div class="row">
+					<div class="small-12 columns">
+						<label><h5>Selecciona el mes a revisar</h5>
+							<select id="selectMes" onChange="cambioMes()">
+								<option value=""></option>
+								<!-- BEGIN meses -->
+								<option value="{mes}">{mesT}</option>
+								<!-- END meses -->
+							</select>
+						</label>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="small-6 columns txt_btn">
+						<p>Descargar estadisticas del mes:</p>
+					</div>
+					<div class="small-2 columns">
+						<a href="crearXLS.php?mesBuscado={mesBuscado}" class="button small radius success">Promos</a>
+					</div>
+					<div class="small-2 columns">
+						<a href="crearXLSCasino.php?mesBuscado={mesBuscado}" class="button small radius success">Casino</a>
+					</div>
+					<div class="small-2 columns">
+						<a href="crearXLSHistorial.php?mesBuscado={mesBuscado}" class="button small radius success">Perfil</a>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="small-12 columns">
+
+<!-- NUEVA TABLA PARA MOSTRAR CASINO -->
+						<table width="100%">
+							<tbody>
+								<thead>
+									<tr>
+										<th width="100" colspan="4" class="text-center">CASINO DREAMS</th>
+									</tr>
+								</thead>
+								<tr>
+									<td>Descargados</td>
+									<td colspan="4">{casinoDescargados}</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- NUEVA TABLA PARA MOSTRAR CASINO -->
+					<table>
+						<thead>
+							<tr>
+								<th width="200">Nombre Cupon</th>
+								<th>Stock</th>
+								<th width="150">Descargados <small>(Este mes)<small></th>
+								<th width="150">Disponibles</th>
+							</tr>
+						</thead>
+						<tbody>
+							<thead>
+								<tr>
+									<th width="100" colspan="4" class="text-center">Temuco</th>
+								</tr>
+							</thead>
+							<!--<tr>
+								<td>CASINO DREAMS</td>
+								<td>{casinoTotal}</td>
+								<td>{casinoDescargados}</td>
+								<td>{casinoDisponibles}</td>
+							</tr>-->
+							<!-- BEGIN temuco -->
+							<tr>
+								<td>{titulo} <a href="visor.php?cuponid={cupon}">ver</a></td>
+								<td>{cuponesDisponibles}</td>
+								<td>{cantidad}</td>
+								<td>{resta}</td>
+							</tr>
+							<!-- END temuco -->
+							
+							<thead>
+								<tr>
+									<th width="100" colspan="4" class="text-center">Valdivia</th>
+								</tr>
+							</thead>
+							
+							<!-- BEGIN valdivia -->
+							<tr>
+								<td>{titulo} <a href="visor.php?cuponid={cupon}">ver</a></td>
+								<td>{cuponesDisponibles}</td>
+								<td>{cantidad}</td>
+								<td>{resta}</td>
+							</tr>
+							<!-- END valdivia -->
+							
+							<thead>
+								<tr>
+									<th width="100" colspan="4" class="text-center">Osorno</th>
+								</tr>
+							</thead>
+							
+							<!-- BEGIN osorno -->
+							<tr>
+								<td>{titulo} <a href="visor.php?cuponid={cupon}">ver</a></td>
+								<td>{cuponesDisponibles}</td>
+								<td>{cantidad}</td>
+								<td>{resta}</td>
+							</tr>
+							<!-- END osorno -->
+
+							<thead>
+								<tr>
+									<th width="100" colspan="4" class="text-center">Puerto Montt</th>
+								</tr>
+							</thead>
+							
+							<!-- BEGIN puerto -->
+							<tr>
+								<td>{titulo} <a href="visor.php?cuponid={cupon}">ver</a></td>
+								<td>{cuponesDisponibles}</td>
+								<td>{cantidad}</td>
+								<td>{resta}</td>
+							</tr>
+							<!-- END puerto -->
+							
+						</tbody>
+					</table>
+					
+					</div>
+				
+				</div>
+				
+			</div>
+		</div>
+				
+		<footer class="row">
+			<div class="large-6 medium-6 small-12 columns large-text-left small-text-center">
+				<a class="button radius small admin-button" href="paso_1.php"><span class="entypoicon">&#9666;</span> Anterior</a>
+			</div>
+			<div class="large-6 medium-6 small-12 columns large-text-right small-text-center">
+				
+			</div>
+		</footer>
+		
+	</fieldset>
+</form>
+<script type="text/javascript">
+function cambioMes(){
+	var mes=document.getElementById("selectMes").value;
+	location.href="estadisticas.php?fechaBusqueda="+mes;
+}
+
+</script>

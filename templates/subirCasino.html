@@ -1,0 +1,72 @@
+<div class="row">
+	<div class="large-12 medium-12 small-12 columns">
+		<ul class="progressbar">
+			<li class="active">¿Qué hacer?</li>
+			<li class="active">Cargar códigos</li>
+		</ul>
+	</div>
+</div>
+<!-- fieldsets -->
+<!-- multistep form -->
+<form id="msform" class="row"   name="importa" method="post" enctype="multipart/form-data" >
+	<fieldset class="large-12 columns">
+		<h2 class="fs-title">Cargar Códigos Casino</h2>
+		<h3 class="fs-subtitle">archivo xlsx</h3>
+
+		<div class="row text-left">
+			<div class="small-8 small-centered columns">
+				<label><h4>Código Casino</h4>
+					<hr/>
+					<div class="row">
+						<div class="large-6 medium-6 small-6 columns">
+							<h4 class="subheader"><small>Códigos por Usuario</small></h4>
+						</div>
+						<div class="large-6 medium-6 small-6 columns">
+							<input type="text" name="cantidad" placeholder="Ej: 4" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-6 medium-6 small-6 columns">
+							<h4 class="subheader"><small>Vigencia Desde</small</h4>
+						</div>
+						<div class="large-6 medium-6 small-6 columns">
+							<input type="date" name="fechaDesde"/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-6 medium-6 small-6 columns">
+							<h4 class="subheader"><small>Vigencia Hasta</small</h4>
+						</div>
+						<div class="large-6 medium-6 small-6 columns">
+							<input type="date" name="fechaHasta"/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-6 medium-6 small-6 columns">
+							<h4 class="subheader">
+								<small>Subir excel</small></h4>
+								</div>
+								<div class="large-6 medium-6 small-6 columns">
+									<input type="file" id="file_upload" class="button" name="excel" />
+									<input type="hidden" value="upload" name="action" />
+								</div>
+							</div>
+						</label>
+					</div>
+				</div>
+				<hr/>		
+
+				<footer class="row">
+					<div class="large-6 medium-6 small-6 columns text-left">
+						<a class="button radius small" href="gestorCupones.php">Anterior</a>
+					</div>
+					<div class="large-6 medium-6 small-6 columns text-right">
+						<button type="submit" name="enviar"  value="Importar" class="button radius success small">Subir archivo</button>
+					</div>
+				</footer>
+
+			</fieldset>
+		</form>
+
+</body>
+<script id='alertaSuave'></script>

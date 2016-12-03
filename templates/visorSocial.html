@@ -1,0 +1,89 @@
+		<div class="row post-cupon" data-equalizer>
+			<div class="large-7 medium-6 small-12 columns post-cupon-img">
+				<div id="owl-demo" class="owl-carousel owl-theme">
+					{imagenSlide}
+					
+				</div>
+<!--
+		<div class="th post-cupon-logo radius">
+			<img src="http://www.passclub.cl/up/aBxoooHvEsSNUFftYeLLlLuGf3veDqv5M.jpg">
+		</div>
+		<div class="post-cupon-desc">-25%</div>
+	-->
+</div>
+<div class="large-5 medium-6 small-12 columns post-cupon-content" data-equalizer-watch>
+	<header>
+		<div class="row">
+			<div class="large-8 medium-8 small-8 columns">
+				<h3>Sociales en <span class="ciudad primary-color">{ciudad}</span></h3>
+			</div>
+			<div class="large-4 medium-4 small-4 columns">
+				<a href="buscarCupon.php?tipoOpcion=social&ciudad={ciudad}" class="button tiny radius more-button">ver todo en {ciudad}</a>
+			</div>
+		</div>
+		<h2>{titulo}</h2>
+		<ul class="inline-list" id="inline-social-list">
+						<li>
+							Compartir
+						</li>
+						<li>
+							<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+						</li>
+						<li>
+							<div class="fb-share-button" data-href="" data-layout="button" data-desc='PassClub - {titulo}' data-image="{imagen}"></div>
+
+						</li>
+					</ul>
+	</header>
+	<div class="content">
+		<table>
+			<tbody>
+				<tr>
+					<td>Fecha</td>
+					<td>{fecha}</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>{descripcion}</p>
+		<ul class="button-group radius">
+			{btnEliminar}
+		</ul>
+	</div>
+</div>
+</div>
+
+<div class="row collapse">
+	<div class="large-12 medium-12 small-12 columns mod-cupones mod-cupones-single">
+		<header id="header-relacionados">
+			<h2>Sociales</h2>
+			<h2 class="subheader">Socios disfrutando de nuestros beneficios</h2>
+		</header>
+		<ul class="large-block-grid-4 mod-cupones-block">
+			<!-- BEGIN relacionados -->
+			<li class="mod-cupones-item">
+				<a href="visor.php?cuponid={id}">
+					<article>
+						<div class="row collapse" data-equalizer>
+							<div class="small-3 columns" data-equalizer-watch>
+								<figure>
+									<img src="{logo}">
+								</figure>
+							</div>
+							<div class="small-9 columns" data-equalizer-watch>
+								<header>
+									<div class="ciudad">{ciudad}</div>
+									<h3>{titulo}</h3>
+									<div class="direccion">{direccion}</div>
+								</header>
+							</div>
+						</div>
+					</article>
+				</a>
+			</li>
+			<!-- END relacionados -->
+		</ul>
+	</div>
+</div>
+
+
+

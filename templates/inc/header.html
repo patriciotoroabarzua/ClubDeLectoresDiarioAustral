@@ -1,0 +1,78 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>PassClub</title>
+	<link rel="stylesheet" href="css/stylesheets/app.css" />
+	<!-- CSS Owl Slider -->
+	<link rel="stylesheet" href="css/stylesheets/owl.carousel.css">
+	<link rel="stylesheet" href="css/stylesheets/owl.theme.css">
+	<script src="css/bower_components/modernizr/modernizr.js"></script>
+	<script type="text/javascript" src="js/localizacion.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+	<style type="text/css">
+		.owl-caption{
+			margin-bottom: 0px;
+			position: absolute;
+			z-index: 10;
+			bottom: 0px;
+			background: rgba(255, 255, 255, 0.54);
+			width: 100%;
+		}
+		
+		.owl-caption .owl-titulo{
+			font-size: 1.4em;
+		}
+		
+		.owl-promo{
+			margin-top: 0px;
+		}
+	</style>
+</head>
+<body>
+
+	<!-- Inicio navegación -->
+	<div class="contain-to-grid" id="nav-ciudades">
+		<nav class="top-bar" data-topbar role="navigation">
+			<ul class="title-area">
+				<li class="name">
+					<!--<h1><a href="#">Title</a></h1>-->
+				</li>
+				<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+				<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+			</ul>
+			<section class="top-bar-section">
+				<!-- Right Nav Section -->
+				<ul class="right">
+					<li><h6>Selecciona tu ciudad</h6></li>
+					<li><a href="index.php">Todas</a></li>
+					<li><a href="index.php?ciudad=Temuco">Temuco</a></li>
+					<li><a href="index.php?ciudad=Valdivia">Valdivia</a></li>
+					<li><a href="index.php?ciudad=Osorno">Osorno</a></li>
+					<li><a href="index.php?ciudad=Puerto%20Montt">Puerto Montt</a></li>
+				</ul>
+			</section>
+		</nav>
+	</div>
+	<div class="contain-to-grid" id="nav-categorias">
+		<nav class="top-bar" data-topbar role="navigation">
+			<ul class="title-area">
+				<li class="name">
+					<h1><a href="#">Title</a></h1>
+				</li>
+				<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+				<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+			</ul>
+			<section class="top-bar-section">
+				<!-- Right Nav Section -->
+				<ul class="right">
+					<li><a href="buscarCupon.php?tipoOpcion=beneficio" id="nav-beneficios">Beneficios</a></li>
+					<li><a href="buscarCupon.php?tipoOpcion=promocion" id="nav-promoclub">PromoClub</a></li>
+					<li><a href="buscarCupon.php?tipoOpcion=panorama" id="nav-panoramas">Panoramas</a></li>
+					<li><a href="buscarCupon.php?tipoOpcion=curso" id="nav-cursos">Cursos & Talleres</a></li>
+					<li><a href="buscarCupon.php?tipoOpcion=social" id="nav-sociales">Sociales</a></li>
+				</ul>
+			</section>
+		</nav>
+	</div>
+	<!-- Fin Navegación -->

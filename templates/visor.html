@@ -1,0 +1,99 @@
+
+<article>
+<div class="row collapse post-cupon">
+	<div class="large-5 medium-5 small-12 columns post-cupon-img">
+		<div class="post-cupon-thumb" style="background-image:url({imagen}); height:300px;"><!-- Imagen definida via css -->
+		</div>
+		<div class="th post-cupon-logo radius" style="z-index:1;">
+			<img src="{logo}">
+		</div>
+		<div class="post-cupon-desc" style="font-size:1.6rem;z-index:1;">{auxiliar}</div>
+		<div id="map" style="height:200px; width:100%; position:absolute; z-index:0;"></div>
+	</div>
+	<div class="large-6 large-offset-1 medium-6 medium-offset-1 small-12 columns post-cupon-content">
+		<header>
+			<div class="row">
+				<div class="large-8 medium-8 small-8 columns">
+					<h3>{tipoOpcionTitulo} en <span class="ciudad primary-color">{ciudad}</span></h3>
+				</div>
+				<div class="large-4 medium-4 small-4 columns">
+					<a href="buscarCupon.php?tipoOpcion={tipoOpcion}&ciudad={ciudad}" class="button tiny radius more-button">ver todo en {ciudad}</a>
+				</div>
+			</div>
+			<h2>{titulo}</h2>
+			<ul class="inline-list" id="inline-social-list">
+				<li>
+					Compartir
+				</li>
+				<li>
+					<a href="https://twitter.com/share" class="twitter-share-button" data-text="PassClub - {titulo}">Tweet</a>
+				</li>
+				<li>
+					<div class="fb-share-button" data-href="" data-layout="button" data-desc="PassClub - {titulo}" data-image="{imagen}"></div>
+				</li>
+			</ul>
+		</header>
+		<div class="content">
+			<table>
+				<tbody>
+					<tr>
+						{direccion}
+					</tr>
+					<tr>
+						{lugar}
+					</tr>
+					<tr>
+						{telefono}
+					</tr>
+					<tr>
+						{web}
+					</tr>
+					<tr>
+						{facebook}
+					</tr>
+					{infoTipo}
+				</tbody>
+			</table>
+			<p>{descripcion}</p>
+			<ul class="button-group radius">
+				{btnEliminar}
+			</ul>
+			{voucher}
+		</div>
+	</div>
+</div>
+</article>
+
+<div class="row collapse">
+	<div class="large-12 medium-12 small-12 columns mod-cupones mod-cupones-single">
+		<header id="header-relacionados">
+			<h2 style="text-transform: inherit;">Beneficios relacionados</h2>
+			<h2 class="subheader" style="text-transform: inherit;">Conoce m&aacute;s de nuestros beneficios</h2>
+		</header>
+		<ul class="large-block-grid-4 mod-cupones-block">
+			<!-- BEGIN relacionados -->
+			<li class="mod-cupones-item">
+				<a href="visor.php?cuponid={id}">
+					<article>
+						<div class="row collapse" data-equalizer>
+							<div class="small-3 columns" data-equalizer-watch>
+								<figure>
+									<img src="{logo}">
+								</figure>
+								<div class="descuento">{auxiliar}</div>
+							</div>
+							<div class="small-9 columns" data-equalizer-watch>
+								<header>
+									<div class="ciudad">{ciudad}</div>
+									<h3>{titulo}</h3>
+									<div class="direccion">{direccion}</div>
+								</header>
+							</div>
+						</div>
+					</article>
+				</a>
+			</li>
+			<!-- END relacionados -->
+		</ul>
+	</div>
+</div>

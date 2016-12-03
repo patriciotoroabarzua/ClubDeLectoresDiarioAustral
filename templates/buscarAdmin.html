@@ -1,0 +1,65 @@
+<div class="row">
+	<div class="large-12 medium-12 small-12 columns">
+		<ul class="progressbar">
+			<li class="active">¿Qué hacer?</li>
+			<li class="active">Buscar Cupón</li>
+			<li class="active">Resultados de búsqueda</li>
+		</ul>
+	</div>
+</div>
+<!-- fieldsets -->
+<!-- multistep form -->
+<div id="msform" class="row">
+	<fieldset class="large-12 columns">
+		<h2 class="fs-title">Buscar Cupón</h2>
+		<h3 class="fs-subtitle">paso 3</h3>
+		<div class="row">
+			<div class="small-6 small-centered columns">
+				<div class="row collapse  postfix-radius" id="cupon-search">
+					<div class="small-9 columns">
+						<input type="text" id="textoBuscado" placeholder="Ingresa el nombre del cupón">
+					</div>
+					<div class="small-3 columns">
+						<button onclick="location.href='buscarAdmin.php?tituloBuscado='+document.getElementById('textoBuscado').value;" class="button postfix">Buscar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-10 small-centered columns">
+				<ul class="no-bullet" id="search-cupon-list">
+					<p></p>
+					<!-- BEGIN resultadosBusqueda -->
+
+					<li>
+						<div class="row">
+							<div class="small-2 columns">
+								<img src="{logo}">
+							</div>
+							<div class="small-5 columns">
+								<h4 class="subheader">{ciudad}</h4>
+								<h4>{titulo}</h4>
+								<p>tipo de cupon <spam class="primary-color">{tipoOpcion}</spam></p>
+							</div>
+							<div class="small-5 columns">
+								<ul class="inline-list">
+									<li><a href="visor.php?cuponid={id}">ver</a></li>
+									<li><a href="editarCupon.php?cuponid={id}&tipoOpcion={tipoOpcion}">editar</a></li>
+									<li><a href="borrar.php?cuponid={id}&tipoOpcion={tipoOpcion}">eliminar</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<!-- END resultadosBusqueda -->
+				</ul>	
+			</div>
+		</div>
+		
+		
+		<footer class="row">
+			<div class="small-12 columns text-center">
+				<a class="button radius small" href="gestorCupones.php">volver al inicio</a>
+			</div>
+		</footer>		
+	</fieldset>
+</div>

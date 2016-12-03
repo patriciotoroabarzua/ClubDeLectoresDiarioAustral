@@ -1,0 +1,292 @@
+
+
+
+<div class="row row-full collapse" data-equalizer>
+	<div class="large-4 medium-4 small-12 columns mod-cupones" id="mod-cupones-beneficios">
+		<header>
+			<h2>Beneficios</h2>
+			<h2 class="subheader">Conoce los beneficios del Club</h2>
+		</header>
+		<ul class="no-bullet mod-cupones-list">
+			<!-- BEGIN beneficios -->
+			<li class="mod-cupones-item" data-equalizer-watch>
+				<a href='visor.php?cuponid={id}'>
+					<article>
+						<div class="row collapse">
+							<div class="small-3 columns" style="background:#fff; border-right:1px solid #ddd;" data-equalizer-watch>
+								<figure style="padding: 20px; text-align:center;">
+									<img src="{logo}" style="max-height:70px;">
+								</figure>
+							</div>
+							<div class="small-9 columns" data-equalizer-watch>
+								<header>
+									<div class="ciudad">{ciudad}</div>
+									<h3>{titulo}</h3>
+									<div class="direccion">{direccion}</div>
+								</header>
+								<div class="descuento">{auxiliar}</div>
+							</div>
+						</div>
+					</article>
+				</a>
+			</li>
+			<!-- END beneficios -->
+		</ul>
+		<footer><a href="buscarCupon.php?tipoOpcion=beneficio"><span>Conoce todos nuestros beneficios</span></a></footer>
+	</div>
+
+	<div class="large-4 medium-4 small-12 columns mod-cupones" id="mod-cupones-promoclub">
+		<header>
+			<h2>PromoClub</h2>
+			<h2 class="subheader">Accede a tus cupones de beneficios</h2>
+		</header>
+		<div class="row collapse">
+			<div class="small-12 columns">
+				<ul class="no-bullet mod-cupones-list">
+					<!-- BEGIN promociones -->
+					<li class="mod-cupones-item mod-cupones-item-sq">
+						<a href="visor.php?cuponid={id}">
+							<article>
+								<div class="row collapse" data-equalizer>
+									<div class="small-3 columns" data-equalizer-watch>
+										<figure style="padding: 20px; background:#fff; border-right:1px solid #ddd;text-align:center;">
+											<img src="{logo}" style="max-height:80px;">
+										</figure>
+									</div>
+									<div class="small-9 columns" data-equalizer-watch>
+										<header>
+											<div class="ciudad">{ciudad}</div>
+											<h3>{titulo}</h3>
+										</header>
+										<div class="descuento text-center">{auxiliar}</div>
+									</div>
+								</div>
+							</article>
+						</a>
+					</li>
+					<!-- END promociones -->
+				</ul>
+				<footer><a href="buscarCupon.php?tipoOpcion=promocion"><span>Conoce todas nuestras promoclub</span></a></footer>
+			</div>
+		</div>
+	</div>
+	<div class="large-4 medium-4 small-12 columns mod-cupones" id="mod-cupones-agenda">
+		<header>
+			<h2>Agenda</h2>
+			<h2 class="subheader">Disfruta los panoramas, cursos y eventos</h2>
+		</header>
+		<ul class="no-bullet mod-cupones-list">
+			<!-- BEGIN agenda -->
+			<li class="mod-cupones-item">
+				<a href="visor.php?cuponid={id}">
+					<article>
+						<div class="row collapse" data-equalizer>
+							<div class="small-3 columns mod-figure" data-equalizer-watch>
+								<figure style="text-align:center;padding:10px;">
+									<img src="{logo}" style="">
+								</figure>
+								<div class="descuento">{auxiliar}</div>
+							</div>
+							<div class="small-9 columns" data-equalizer-watch>
+								<header>
+									<div class="ciudad">{ciudad}</div>
+									<h3>{titulo}</h3>
+									<!-- <div class="direccion">{direccion}</div> -->
+								</header>
+								<div class="fecha">{fecha}</div>
+							</div>
+						</div>
+					</article>
+				</a>
+			</li>
+			<!-- END agenda -->
+		</ul>
+		<footer><a href="buscarCupon.php?tipoOpcion=agenda"><span>Ver toda la agenda</span></a></footer>
+	</div>
+</div>
+
+<div class="row ads-row">
+	<div class="large-4 medium-4 small-12 columns">
+		<small class="text-center" style="display:block;color:#aaa;text-transform:uppercase;">publicidad</small>
+		{espacioPublicidad1}
+	</div>
+	<div class="large-4 medium-4 small-12 columns">
+		<small class="text-center" style="display:block;color:#aaa;text-transform:uppercase;">publicidad</small>
+		{espacioPublicidad2}
+	</div>
+	<div class="large-4 medium-4 small-12 columns">
+		<small class="text-center" style="display:block;color:#aaa;text-transform:uppercase;">publicidad</small>
+		{espacioPublicidad3}
+	</div>
+</div>
+
+<div class="row suscribe-ad">
+	<div class="large-8 medium-8 small-12 columns">
+		<div class="panel panel-ads">
+			<div class="row">
+				<div class="large-6 medium-6 small-12 columns text-right">
+					<h4>Mailing de beneficios y promociones!</h4>
+					<p>Ingresa tu correo electrónico y conoce los beneficios de ser socio del Club de Lectores</p>
+				</div>
+				<div class="large-6 medium-4 small-12 columns">
+                    <form enctype="application/x-www-form-urlencoded" action="http://passclub.ip-zone.com/ccm/subscribe/index/form/" method="post" style="margin-top:0;">
+
+ <label for="email" class="required">Email</label>
+ <input type="text" name="email" id="email" value="" />
+<input type="submit" name="submit" id="submit" value="Suscribir" class="button tiny radius" style="margin-bottom:0;" />
+</form>
+                    
+
+				<!--
+	<form action="http://demo.ip-zone.com/ccm/manage-subscription" enctype="application/x-www-form-urlencoded" method="post">
+						<dl class="zend_form">
+							<dt id="email-label"><label class="required" for="email">Email:</label></dt>
+							<dd id="email-element"><input id="email" type="text" name="email" value="" /></dd>
+							<dt id="name-label"><label class="required" for="name">Password:</label></dt>
+							<dd id="name-element"><input id="code" type="text" name="code" value="" /></dd>
+							<dt id="submit-label"> </dt>
+							<dd id="submit-element"><input id="submit" type="submit" name="submit" value="Gestionar" /></dd></dl>
+					</form>
+-->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="large-4 medium-4 small-12 columns">
+		{casinoTemuco}
+	</div>
+</div>
+<!--INICIO COSAS -->
+
+<div class="row collapse">
+	<div class="large-4 medium-4 small-12 columns mod-cupones" id="mod-cupones-panoramas">
+		<header>
+			<h2>Panoramas</h2>
+			<h2 class="subheader">Actividades únicas y exclusivas</h2>
+		</header>
+		<ul class="no-bullet mod-cupones-list">
+			<!-- BEGIN panoramas -->
+			<li class="mod-cupones-item">
+				<a href="visor.php?cuponid={id}">
+					<article>
+						<div class="row collapse" data-equalizer>
+							<div class="small-3 columns" data-equalizer-watch>
+								<figure style="text-align:center;padding:10px;">
+									<img src="{logo}" style="">
+								</figure>
+							</div>
+							<div class="small-9 columns" data-equalizer-watch>
+								<header>
+									<div class="ciudad">{ciudad}</div>
+									<h3>{titulo}</h3>
+									<div class="direccion">{direccion}</div>
+								</header>
+								<div class="descuento">{auxiliar}</div>
+							</div>
+						</div>
+					</article>
+				</a>
+			</li>
+			<!-- END panoramas -->
+		</ul>
+		<footer><a href="buscarCupon.php?tipoOpcion=panorama"><span>Todos los Panoramas</span></a></footer>
+	</div>
+	<div class="large-4 medium-4 small-12 columns mod-cupones" id="mod-cupones-cursos">
+		<header>
+			<h2>Cursos & Talleres</h2>
+			<h2 class="subheader">Actividades únicas y exclusivas</h2>
+		</header>
+		<ul class="no-bullet mod-cupones-list">
+			<!-- BEGIN cursos -->
+			<li class="mod-cupones-item">
+				<a href="visor.php?cuponid={id}">
+					<article>
+						<div class="row collapse" data-equalizer>
+							<div class="small-3 columns" data-equalizer-watch>
+								<figure style="text-align:center;padding:10px;">
+									<img src="{logo}" style="">
+								</figure>
+							</div>
+							<div class="small-9 columns" data-equalizer-watch>
+								<header>
+									<div class="ciudad">{ciudad}</div>
+									<h3>{titulo}</h3>
+									<div class="direccion">{direccion}</div>
+								</header>
+								<div class="descuento">{auxiliar}</div>
+							</div>
+						</div>
+					</article>
+				</a>
+			</li>
+			<!-- END cursos -->
+		</ul>
+		<footer><a href="buscarCupon.php?tipoOpcion=curso"><span>Conoce todos los cursos & talleres</span></a></footer>
+	</div>
+	<div class="large-4 medium-4 small-12 columns">
+		<div class="mod-cupones" id="mod-cupones-sociales">
+			<header>
+				<h2>Sociales</h2>
+				<h2 class="subheader">Socios participando de los beneficios</h2>
+			</header>
+			<div class="row">
+				<div class="large-12 medium-12 small-12 columns">
+					<ul class="large-block-grid-2 medium-block-grid-2 small-block-grid-1">
+						<!-- BEGIN sociales -->
+						<li>
+							<a class="th" href="visorSocial.php?cuponid={id}">
+								<img src="{imagen}">
+							</a>
+							<h3><strong class="ciudad">{ciudad}</strong><br/> {titulo}</h3>
+						</li>
+						<!-- END sociales -->
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="mod-cupones" id="mod-cupones-concursos">
+			<header>
+				<h2>Concursos</h2>
+				<h2 class="subheader">Participa y gana en el Club</h2>
+			</header>
+			<div class="row">
+				<div class="large-12 medium-12 small-12 columns">
+					<ul class="large-block-grid-4 medium-block-grid-2 small-block-grid-2">
+						<!-- BEGIN concursos -->
+						<li>
+							<a class="th" href="visor.php?cuponid={id}">
+								<img src="{imagen}">
+							</a>
+							<h3 class="ciudad">{ciudad}</h3>
+						</li>
+						<!-- END concursos -->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--FIN COSAS-->
+
+
+
+<div class="row ads-row">
+	<div class="large-4 medium-4 small-12 columns">
+		<small class="text-center" style="display:block;color:#aaa;text-transform:uppercase;">publicidad</small>
+		{espacioPublicidad4}
+	</div>
+	<div class="large-4 medium-4 small-12 columns">
+		<small class="text-center" style="display:block;color:#aaa;text-transform:uppercase;">publicidad</small>
+		{espacioPublicidad5}
+	</div>
+	<div class="large-4 medium-4 small-12 columns">
+		<figure class="ads-mod">
+			<a href="visorRevista.php">
+				<img src="css/img/sub-1.png">
+			</a>
+		</figure>
+	</div>
+</div>
+
+
